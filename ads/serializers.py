@@ -1,12 +1,12 @@
 from rest_framework import serializers
 
-from announcements.models import Announcement, Review
+from ads.models import Ad, Review
 
 
-class AnnouncementSerializers(serializers.ModelSerializer):
+class AdSerializers(serializers.ModelSerializer):
 
     class Meta:
-        model = Announcement
+        model = Ad
         fields = '__all__'
 
 

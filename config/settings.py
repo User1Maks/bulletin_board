@@ -25,9 +25,10 @@ INSTALLED_APPS = [
     'corsheaders',
     'rest_framework',
     'rest_framework_simplejwt',
+    'django_filters',
 
     'users',
-    'announcements',
+    'ads',
 ]
 
 MIDDLEWARE = [
@@ -114,13 +115,14 @@ CSRF_TRUSTED_ORIGINS = [
     'https://read-and-write.example.com',
 ]
 
-# Настройки JWT-токенов
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': [
         'rest_framework_simplejwt.authentication.JWTAuthentication',
     ],
     'DEFAULT_PERMISSION_CLASSES': [
         'rest_framework.permissions.IsAuthenticated'],
+    'DEFAULT_FILTER_BACKENDS': [
+        'django_filters.rest_framework.DjangoFilterBackend'],
 }
 
 # Настройки срока действия токенов

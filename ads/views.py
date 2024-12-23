@@ -1,41 +1,46 @@
+from django_filters.rest_framework import DjangoFilterBackend
 from rest_framework import generics
+from rest_framework.filters import OrderingFilter, SearchFilter
 
-from announcements.models import Announcement, Review
-from announcements.serializers import (AnnouncementSerializers,
-                                       ReviewSerializers)
+from ads.models import Ad, Review
+from ads.serializers import AdSerializers, ReviewSerializers
 
 
 # Endpoints объявления
-class AnnouncementCreateAPIView(generics.CreateAPIView):
+class AdCreateAPIView(generics.CreateAPIView):
     """Endpoint создания объявления"""
-    serializer_class = AnnouncementSerializers
+    serializer_class = AdSerializers
 
     def perform_create(self, serializer):
         """Автоматически добавляет автора объявления"""
         serializer.save(author=self.request.user)
 
 
-class AnnouncementListAPIView(generics.ListAPIView):
+class AdListAPIView(generics.ListAPIView):
     """Endpoint списка объявлений"""
-    queryset = Announcement.objects.all()
-    serializer_class = AnnouncementSerializers
+    queryset = Ad.objects.all()
+    serializer_class = AdSerializers
+    filter_backends = [DjangoFilterBackend, OrderingFilter, SearchFilter]
+    filterset_fields = ('price', 'author',)
+    ordering_fields = ('-created_at',)
+    search_fields = ('title',)
 
 
-class AnnouncementRetrieveAPIView(generics.RetrieveAPIView):
+class AdRetrieveAPIView(generics.RetrieveAPIView):
     """Endpoint просмотра объявления"""
-    queryset = Announcement.objects.all()
-    serializer_class = AnnouncementSerializers
+    queryset = Ad.objects.all()
+    serializer_class = AdSerializers
 
 
-class AnnouncementUpdateAPIView(generics.UpdateAPIView):
+class AdUpdateAPIView(generics.UpdateAPIView):
     """Endpoint для обновления объявления"""
-    queryset = Announcement.objects.all()
-    serializer_class = AnnouncementSerializers
+    queryset = Ad.objects.all()
+    serializer_class = AdSerializers
 
 
-class AnnouncementDestroyAPIView(generics.DestroyAPIView):
+class AdDestroyAPIView(generics.DestroyAPIView):
     """Endpoint для удаления объявления"""
-    queryset = Announcement.objects.all()
+    queryset = Ad.objects.all()
 
 
 # Endpoints отзыва

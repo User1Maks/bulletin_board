@@ -4,7 +4,7 @@ from config import settings
 from users.models import NULLABLE
 
 
-class Announcement(models.Model):
+class Ad(models.Model):
     """Модель объявления."""
 
     title = models.CharField(
@@ -48,7 +48,7 @@ class Review(models.Model):
         related_name='reviews_written'
     )
     ad = models.ForeignKey(
-        Announcement,
+        Ad,
         on_delete=models.CASCADE,
         verbose_name='Объявление',
         related_name='reviews'
