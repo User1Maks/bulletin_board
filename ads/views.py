@@ -1,8 +1,12 @@
+from datetime import datetime
+
 from django_filters.rest_framework import DjangoFilterBackend
 from rest_framework import generics
 from rest_framework.filters import OrderingFilter, SearchFilter
+from rest_framework.permissions import AllowAny
 
 from ads.models import Ad, Review
+from ads.paginators import AdPaginator
 from ads.serializers import AdSerializers, ReviewSerializers
 
 
@@ -24,6 +28,8 @@ class AdListAPIView(generics.ListAPIView):
     filterset_fields = ('price', 'author',)
     ordering_fields = ('-created_at',)
     search_fields = ('title',)
+    pagination_class = AdPaginator
+    permission_classes = (AllowAny,)
 
 
 class AdRetrieveAPIView(generics.RetrieveAPIView):

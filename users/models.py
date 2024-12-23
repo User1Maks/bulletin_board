@@ -1,5 +1,6 @@
 from django.contrib.auth.models import AbstractUser
 from django.db import models
+from phonenumber_field.modelfields import PhoneNumberField
 
 NULLABLE = {'blank': True, 'null': True}
 
@@ -16,8 +17,7 @@ class User(AbstractUser):
     last_name = models.CharField(max_length=50, **NULLABLE,
                                  verbose_name='Фамилия',
                                  help_text='Введите фамилию')
-    phone = models.CharField(max_length=25,
-                             **NULLABLE,
+    phone = PhoneNumberField(**NULLABLE,
                              verbose_name='Номер телефона',
                              help_text='Введите номер телефона')
     avatar = models.ImageField(upload_to='users/avatars/',
@@ -41,4 +41,3 @@ class User(AbstractUser):
     class Meta:
         verbose_name = 'Пользователь'
         verbose_name_plural = 'Пользователи'
-

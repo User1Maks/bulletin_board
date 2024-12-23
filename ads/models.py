@@ -24,7 +24,22 @@ class Ad(models.Model):
         on_delete=models.CASCADE,
         related_name='announcement')
     created_at = models.DateTimeField(
-        verbose_name='Дата и время создания объявления')
+        verbose_name='Дата и время создания объявления',
+        auto_now_add=True,
+        editable=False
+    )
+    updated_at = models.DateTimeField(
+        verbose_name='Дата и время обновления объявления',
+        **NULLABLE,
+        auto_now=True,
+        editable=False
+    )
+    image = models.ImageField(
+        upload_to='ads/images/',
+        verbose_name='Изображение',
+        **NULLABLE,
+        help_text='Загрузите изображение'
+    )
 
     def __str__(self):
         return f'{self.title} - {self.price}'
@@ -54,7 +69,15 @@ class Review(models.Model):
         related_name='reviews'
     )
     created_at = models.DateTimeField(
-        verbose_name='Дата и время создания отзыва'
+        verbose_name='Дата и время создания отзыва',
+        auto_now_add=True,
+        editable=False
+    )
+    updated_at = models.DateTimeField(
+        verbose_name='Дата и время обновления отзыва',
+        **NULLABLE,
+        auto_now=True,
+        editable=False
     )
 
     def __str__(self):
