@@ -1,0 +1,768 @@
+[
+{
+    "model": "auth.permission",
+    "pk": 1,
+    "fields": {
+        "name": "Can add log entry",
+        "content_type": 1,
+        "codename": "add_logentry"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 2,
+    "fields": {
+        "name": "Can change log entry",
+        "content_type": 1,
+        "codename": "change_logentry"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 3,
+    "fields": {
+        "name": "Can delete log entry",
+        "content_type": 1,
+        "codename": "delete_logentry"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 4,
+    "fields": {
+        "name": "Can view log entry",
+        "content_type": 1,
+        "codename": "view_logentry"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 5,
+    "fields": {
+        "name": "Can add permission",
+        "content_type": 2,
+        "codename": "add_permission"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 6,
+    "fields": {
+        "name": "Can change permission",
+        "content_type": 2,
+        "codename": "change_permission"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 7,
+    "fields": {
+        "name": "Can delete permission",
+        "content_type": 2,
+        "codename": "delete_permission"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 8,
+    "fields": {
+        "name": "Can view permission",
+        "content_type": 2,
+        "codename": "view_permission"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 9,
+    "fields": {
+        "name": "Can add group",
+        "content_type": 3,
+        "codename": "add_group"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 10,
+    "fields": {
+        "name": "Can change group",
+        "content_type": 3,
+        "codename": "change_group"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 11,
+    "fields": {
+        "name": "Can delete group",
+        "content_type": 3,
+        "codename": "delete_group"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 12,
+    "fields": {
+        "name": "Can view group",
+        "content_type": 3,
+        "codename": "view_group"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 13,
+    "fields": {
+        "name": "Can add content type",
+        "content_type": 4,
+        "codename": "add_contenttype"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 14,
+    "fields": {
+        "name": "Can change content type",
+        "content_type": 4,
+        "codename": "change_contenttype"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 15,
+    "fields": {
+        "name": "Can delete content type",
+        "content_type": 4,
+        "codename": "delete_contenttype"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 16,
+    "fields": {
+        "name": "Can view content type",
+        "content_type": 4,
+        "codename": "view_contenttype"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 17,
+    "fields": {
+        "name": "Can add session",
+        "content_type": 5,
+        "codename": "add_session"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 18,
+    "fields": {
+        "name": "Can change session",
+        "content_type": 5,
+        "codename": "change_session"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 19,
+    "fields": {
+        "name": "Can delete session",
+        "content_type": 5,
+        "codename": "delete_session"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 20,
+    "fields": {
+        "name": "Can view session",
+        "content_type": 5,
+        "codename": "view_session"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 21,
+    "fields": {
+        "name": "Can add Пользователь",
+        "content_type": 6,
+        "codename": "add_user"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 22,
+    "fields": {
+        "name": "Can change Пользователь",
+        "content_type": 6,
+        "codename": "change_user"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 23,
+    "fields": {
+        "name": "Can delete Пользователь",
+        "content_type": 6,
+        "codename": "delete_user"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 24,
+    "fields": {
+        "name": "Can view Пользователь",
+        "content_type": 6,
+        "codename": "view_user"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 25,
+    "fields": {
+        "name": "Can add Объявление",
+        "content_type": 7,
+        "codename": "add_ad"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 26,
+    "fields": {
+        "name": "Can change Объявление",
+        "content_type": 7,
+        "codename": "change_ad"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 27,
+    "fields": {
+        "name": "Can delete Объявление",
+        "content_type": 7,
+        "codename": "delete_ad"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 28,
+    "fields": {
+        "name": "Can view Объявление",
+        "content_type": 7,
+        "codename": "view_ad"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 29,
+    "fields": {
+        "name": "Can add Отзыв",
+        "content_type": 8,
+        "codename": "add_review"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 30,
+    "fields": {
+        "name": "Can change Отзыв",
+        "content_type": 8,
+        "codename": "change_review"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 31,
+    "fields": {
+        "name": "Can delete Отзыв",
+        "content_type": 8,
+        "codename": "delete_review"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 32,
+    "fields": {
+        "name": "Can view Отзыв",
+        "content_type": 8,
+        "codename": "view_review"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 33,
+    "fields": {
+        "name": "Can add Password Reset Token",
+        "content_type": 9,
+        "codename": "add_resetpasswordtoken"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 34,
+    "fields": {
+        "name": "Can change Password Reset Token",
+        "content_type": 9,
+        "codename": "change_resetpasswordtoken"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 35,
+    "fields": {
+        "name": "Can delete Password Reset Token",
+        "content_type": 9,
+        "codename": "delete_resetpasswordtoken"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 36,
+    "fields": {
+        "name": "Can view Password Reset Token",
+        "content_type": 9,
+        "codename": "view_resetpasswordtoken"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 1,
+    "fields": {
+        "app_label": "admin",
+        "model": "logentry"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 2,
+    "fields": {
+        "app_label": "auth",
+        "model": "permission"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 3,
+    "fields": {
+        "app_label": "auth",
+        "model": "group"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 4,
+    "fields": {
+        "app_label": "contenttypes",
+        "model": "contenttype"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 5,
+    "fields": {
+        "app_label": "sessions",
+        "model": "session"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 6,
+    "fields": {
+        "app_label": "users",
+        "model": "user"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 7,
+    "fields": {
+        "app_label": "ads",
+        "model": "ad"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 8,
+    "fields": {
+        "app_label": "ads",
+        "model": "review"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 9,
+    "fields": {
+        "app_label": "django_rest_passwordreset",
+        "model": "resetpasswordtoken"
+    }
+},
+{
+    "model": "sessions.session",
+    "pk": "9m9no328e90nj5h0qzpiqje7w7q4ag1n",
+    "fields": {
+        "session_data": ".eJxVjDsOwjAQBe_iGll2bGdtSvqcwdrsbnAAOVI-FeLuJFIKaN_MvLfKuK0lb4vMeWR1VVZdfrce6Sn1APzAep80TXWdx14fij7poruJ5XU73b-DgkvZ6962TKkFSRANUxis96FJXjA4xzQYkYgAxghQSCjGAjjXpMjk98ipzxffSjeM:1tSIOu:jN6XgG3lErgQsa-dvmM_yamvwFGvBCZpuK7dQq1oA0w",
+        "expire_date": "2025-01-13T16:13:52.924Z"
+    }
+},
+{
+    "model": "sessions.session",
+    "pk": "vcv1h48p7xgt6re44qu4kqvofalxiau2",
+    "fields": {
+        "session_data": ".eJxVjEEOwiAQRe_C2pASZgrj0r1nIDNApWogKe3KeHdt0oVu_3vvv1TgbS1h63kJc1JnZdTpdxOOj1x3kO5cb03HVtdlFr0r-qBdX1vKz8vh_h0U7uVb22lEDyAGnZAjATZCIGJlRLHIMBAMGTM69B59nGx2BAwUDVogq94fxEM2zg:1tPi8g:yUm6u27S2clZnEr-s1r7gl1zDy0el6W3UpbgI9DHluo",
+        "expire_date": "2025-01-06T13:06:26.152Z"
+    }
+},
+{
+    "model": "users.user",
+    "pk": 1,
+    "fields": {
+        "password": "pbkdf2_sha256$870000$ygLn7yKzYrszny4We4Pu6h$Bf27W2EdeUFBKC4dngVMqSPBn/Zfk8/LpZk7Kfpeemc=",
+        "last_login": "2024-12-30T16:13:52.911Z",
+        "is_superuser": true,
+        "is_staff": true,
+        "is_active": true,
+        "date_joined": "2024-12-27T12:40:14.248Z",
+        "email": "admin@example.com",
+        "first_name": "Admin",
+        "last_name": "Adminov",
+        "phone": null,
+        "avatar": "",
+        "uid": "5d0bd9bc-3670-4d54-bb4e-3075a88d64c4",
+        "role": "admin",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "users.user",
+    "pk": 2,
+    "fields": {
+        "password": "pbkdf2_sha256$870000$EWk0eusAm6UPzR5RwME18r$YaKVT21+UbYLnaE3IISMSISpu7y5NFF7VbQR42x9eLY=",
+        "last_login": null,
+        "is_superuser": false,
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2024-12-27T12:42:26.976Z",
+        "email": "user@example.com",
+        "first_name": null,
+        "last_name": null,
+        "phone": "+78000000000",
+        "avatar": "",
+        "uid": "5d0bd9bc-3670-4d54-bb4e-3075a88d64c3",
+        "role": "user",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "users.user",
+    "pk": 3,
+    "fields": {
+        "password": "pbkdf2_sha256$870000$Bfyh6NFzMVUL95Ho4gC0Mh$bPnRfc5+Y937yEzcsEkEoNdBBkZr8oZrlUF90eEf/4s=",
+        "last_login": null,
+        "is_superuser": false,
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2024-12-27T12:43:24.025Z",
+        "email": "user-admin@example.com",
+        "first_name": null,
+        "last_name": null,
+        "phone": "+78000000001",
+        "avatar": "",
+        "uid": "5d0bd9bc-3670-4d54-bb4e-3075a88d64c2",
+        "role": "admin",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "users.user",
+    "pk": 4,
+    "fields": {
+        "password": "pbkdf2_sha256$870000$wCbmrJIjuh9alskYV0mkHn$LDtHy3D2MSQhYBaFD17tZJGpeva3gPXaIT1fwbnZZJQ=",
+        "last_login": null,
+        "is_superuser": false,
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2024-12-27T12:45:06.752Z",
+        "email": "Bogatyr28@yandex.ru",
+        "first_name": null,
+        "last_name": null,
+        "phone": "+78000000002",
+        "avatar": "",
+        "uid": "5d0bd9bc-3670-4d54-bb4e-3075a88d64c1",
+        "role": "admin",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "users.user",
+    "pk": 6,
+    "fields": {
+        "password": "",
+        "last_login": null,
+        "is_superuser": false,
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2024-12-30T16:21:53.395Z",
+        "email": "Test@mail.ru",
+        "first_name": null,
+        "last_name": null,
+        "phone": null,
+        "avatar": "",
+        "uid": "076c314d-e734-457f-a7d1-633881b29e65",
+        "role": "user",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "ads.ad",
+    "pk": 1,
+    "fields": {
+        "title": "Название объявления от админа 1",
+        "price": "1000.00",
+        "description": null,
+        "author": 3,
+        "created_at": "2024-12-28T12:42:40.841Z",
+        "updated_at": null,
+        "image": ""
+    }
+},
+{
+    "model": "ads.ad",
+    "pk": 2,
+    "fields": {
+        "title": "Название объявления от админа 2",
+        "price": "1000.00",
+        "description": null,
+        "author": 3,
+        "created_at": "2024-12-28T12:42:54.331Z",
+        "updated_at": null,
+        "image": ""
+    }
+},
+{
+    "model": "ads.ad",
+    "pk": 3,
+    "fields": {
+        "title": "Название объявления от админа 3",
+        "price": "1000.00",
+        "description": null,
+        "author": 3,
+        "created_at": "2024-12-28T12:42:58.477Z",
+        "updated_at": null,
+        "image": ""
+    }
+},
+{
+    "model": "ads.ad",
+    "pk": 4,
+    "fields": {
+        "title": "Название объявления от пользователя 1",
+        "price": "1000.00",
+        "description": null,
+        "author": 3,
+        "created_at": "2024-12-28T12:44:10.497Z",
+        "updated_at": null,
+        "image": ""
+    }
+},
+{
+    "model": "ads.ad",
+    "pk": 5,
+    "fields": {
+        "title": "Название объявления от пользователя 2",
+        "price": "2000.00",
+        "description": null,
+        "author": 3,
+        "created_at": "2024-12-28T12:44:18.520Z",
+        "updated_at": null,
+        "image": ""
+    }
+},
+{
+    "model": "ads.ad",
+    "pk": 6,
+    "fields": {
+        "title": "Название объявления от пользователя 3",
+        "price": "3000.00",
+        "description": null,
+        "author": 3,
+        "created_at": "2024-12-28T12:44:26.142Z",
+        "updated_at": null,
+        "image": ""
+    }
+},
+{
+    "model": "ads.ad",
+    "pk": 7,
+    "fields": {
+        "title": "Название объявления от Bogatyr 1",
+        "price": "4000.00",
+        "description": null,
+        "author": 4,
+        "created_at": "2024-12-28T12:49:18.099Z",
+        "updated_at": null,
+        "image": ""
+    }
+},
+{
+    "model": "ads.ad",
+    "pk": 8,
+    "fields": {
+        "title": "Название объявления от Bogatyr 2",
+        "price": "5000.00",
+        "description": null,
+        "author": 4,
+        "created_at": "2024-12-28T12:49:24.413Z",
+        "updated_at": null,
+        "image": ""
+    }
+},
+{
+    "model": "ads.ad",
+    "pk": 9,
+    "fields": {
+        "title": "Название объявления от Bogatyr 3",
+        "price": "6000.00",
+        "description": null,
+        "author": 4,
+        "created_at": "2024-12-28T12:49:30.884Z",
+        "updated_at": null,
+        "image": ""
+    }
+},
+{
+    "model": "ads.review",
+    "pk": 1,
+    "fields": {
+        "text": "я пользователь. Класнный коммент",
+        "author": 2,
+        "ad": 1,
+        "created_at": "2024-12-28T12:45:12.956Z",
+        "updated_at": null
+    }
+},
+{
+    "model": "ads.review",
+    "pk": 2,
+    "fields": {
+        "text": "я пользователь. Класнный коммент 2",
+        "author": 2,
+        "ad": 2,
+        "created_at": "2024-12-28T12:46:10.562Z",
+        "updated_at": null
+    }
+},
+{
+    "model": "ads.review",
+    "pk": 3,
+    "fields": {
+        "text": "я пользователь. Класнный коммент 3",
+        "author": 2,
+        "ad": 3,
+        "created_at": "2024-12-28T12:46:20.837Z",
+        "updated_at": null
+    }
+},
+{
+    "model": "ads.review",
+    "pk": 4,
+    "fields": {
+        "text": "я Bogatyr. Могучий коммент 1",
+        "author": 4,
+        "ad": 4,
+        "created_at": "2024-12-28T12:47:29.637Z",
+        "updated_at": null
+    }
+},
+{
+    "model": "ads.review",
+    "pk": 5,
+    "fields": {
+        "text": "я Bogatyr. Могучий коммент 2",
+        "author": 4,
+        "ad": 5,
+        "created_at": "2024-12-28T12:47:43.050Z",
+        "updated_at": null
+    }
+},
+{
+    "model": "ads.review",
+    "pk": 6,
+    "fields": {
+        "text": "я Bogatyr. Могучий коммент 3",
+        "author": 4,
+        "ad": 6,
+        "created_at": "2024-12-28T12:47:50.019Z",
+        "updated_at": null
+    }
+},
+{
+    "model": "ads.review",
+    "pk": 7,
+    "fields": {
+        "text": "я Bogatyr. Могучий коммент 4",
+        "author": 4,
+        "ad": 1,
+        "created_at": "2024-12-28T12:47:58.204Z",
+        "updated_at": null
+    }
+},
+{
+    "model": "ads.review",
+    "pk": 8,
+    "fields": {
+        "text": "я Bogatyr. Могучий коммент 5",
+        "author": 4,
+        "ad": 2,
+        "created_at": "2024-12-28T12:48:04.390Z",
+        "updated_at": null
+    }
+},
+{
+    "model": "ads.review",
+    "pk": 9,
+    "fields": {
+        "text": "я Bogatyr. Могучий коммент 6",
+        "author": 4,
+        "ad": 3,
+        "created_at": "2024-12-28T12:48:10.401Z",
+        "updated_at": null
+    }
+},
+{
+    "model": "ads.review",
+    "pk": 10,
+    "fields": {
+        "text": "я user. Славный коммент 4",
+        "author": 2,
+        "ad": 7,
+        "created_at": "2024-12-28T12:51:32.743Z",
+        "updated_at": null
+    }
+},
+{
+    "model": "ads.review",
+    "pk": 11,
+    "fields": {
+        "text": "я user. Славный коммент 5",
+        "author": 2,
+        "ad": 8,
+        "created_at": "2024-12-28T12:51:42.147Z",
+        "updated_at": null
+    }
+},
+{
+    "model": "ads.review",
+    "pk": 12,
+    "fields": {
+        "text": "я user. Дорого",
+        "author": 2,
+        "ad": 9,
+        "created_at": "2024-12-28T12:51:55.460Z",
+        "updated_at": null
+    }
+}
+]
