@@ -19,11 +19,14 @@ django-phonenumber-field = { extras = ["phonenumberslite"], version = "^8.0.0" }
 celery = "^5.4.0"
 redis = "^5.2.1"
 gevent = "^24.11.1"
+drf-yasg = "^1.21.8"
 
 [tool.poetry.group.dev.dependencies]
 ipython = "^8.30.0"
 pytest = "^8.3.4"
 pytest-django = "^4.9.0"
+pytest-cov = "^6.0.0"
+flake8 = "^7.1.1"
 
 [tool.poetry.group.lint.dependencies]
 isort = "^5.13.2"

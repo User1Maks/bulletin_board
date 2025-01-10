@@ -15,8 +15,8 @@ app_name = UsersConfig.name
 urlpatterns = [
     path('register/', UserCreateAPIView.as_view(), name='register'),
     path('profile/', UserRetrieveAPIView.as_view(), name='profile'),
-    path('update-profile/', UserUpdateAPIView.as_view(), name='user-profile'),
-    path('delete/', UserDestroyAPIView.as_view(), name='user-delete'),
+    path('update-profile/', UserUpdateAPIView.as_view(), name='update-profile'),
+    path('delete/<int:pk>/', UserDestroyAPIView.as_view(), name='user-delete'),
     path('list/', UserListAPIView.as_view(), name='user-list'),
 
     path('login/', TokenObtainPairView.as_view(

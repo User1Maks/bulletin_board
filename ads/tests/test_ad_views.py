@@ -106,7 +106,7 @@ def test_ads_list_authenticated_user(auth_user, ad):
 @pytest.mark.django_db
 def test_ad_list_pagination(api_client, ad, user):
     """Тест на проверку пагинации в списке объявлений."""
-    ad_2 = Ad.objects.create(
+    Ad.objects.create(
         title='Название от пользователя 2',
         price=10_000,
         description='Описание товара пользователем 2.',

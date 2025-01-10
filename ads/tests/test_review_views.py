@@ -80,7 +80,7 @@ def test_review_create(auth_user, ad, user):
 @pytest.mark.django_db
 def test_review_list_pagination(auth_user, ad, review, user):
     """Тест на проверку пагинации в списке отзывов."""
-    review_2 = Review.objects.create(
+    Review.objects.create(
         text='Отзыв 2',
         author=user,
         ad=ad
@@ -170,7 +170,7 @@ def test_review_create_admin(auth_admin, ad, admin):
 
 
 @pytest.mark.django_db
-def test_reviews_list_authenticated_user(auth_admin, ad, review):
+def test_reviews_list_admin_user(auth_admin, ad, review):
     """Тест на просмотр списка отзывов администратором."""
     url = reverse('ads:review-list', args=[ad.id])
     response = auth_admin.get(url)
@@ -182,7 +182,7 @@ def test_reviews_list_authenticated_user(auth_admin, ad, review):
 
 
 @pytest.mark.django_db
-def test_review_retrieve_owner(auth_admin, ad, review):
+def test_review_retrieve_admin(auth_admin, ad, review):
     """Тест на просмотр отзыва администратором."""
     url = reverse('ads:review-detail', args=[review.id])
     response = auth_admin.get(url)
@@ -195,7 +195,7 @@ def test_review_retrieve_owner(auth_admin, ad, review):
 
 
 @pytest.mark.django_db
-def test_reviews_update_owner_user(auth_admin, review):
+def test_reviews_update_admin(auth_admin, review):
     """Тест на обновление чужого отзыва администратором."""
     url = reverse('ads:review-update', args=[review.id])
     new_data = {
@@ -216,7 +216,7 @@ def test_reviews_update_owner_user(auth_admin, review):
 
 
 @pytest.mark.django_db
-def test_review_destroy_by_author(auth_admin, review):
+def test_review_destroy_by_admin(auth_admin, review):
     """Тест на удаление чужого отзыва администратором."""
     url = reverse('ads:review-delete', args=[review.id])
     response = auth_admin.delete(url)

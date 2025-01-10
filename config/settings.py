@@ -27,6 +27,7 @@ INSTALLED_APPS = [
     'rest_framework_simplejwt',
     'django_filters',
     'phonenumber_field',
+    'drf_yasg',
 
     'users',
     'ads',
