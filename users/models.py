@@ -1,3 +1,5 @@
+import uuid
+
 from django.contrib.auth.models import AbstractUser
 from django.db import models
 from phonenumber_field.modelfields import PhoneNumberField
@@ -19,11 +21,18 @@ class User(AbstractUser):
                                  help_text='Введите фамилию')
     phone = PhoneNumberField(**NULLABLE,
                              verbose_name='Номер телефона',
-                             help_text='Введите номер телефона')
+                             help_text='Введите номер телефона',
+                             unique=True)
     avatar = models.ImageField(upload_to='users/avatars/',
                                verbose_name='Аватар',
                                **NULLABLE,
                                help_text='Загрузите аватар профиля')
+    uid = models.UUIDField(
+        verbose_name='uid пользователя',
+        default=uuid.uuid4,
+        editable=False,
+        unique=True
+    )
     ROLE_CHOICES = [
         ('user', 'User'),
         ('admin', 'Admin')
@@ -37,6 +46,12 @@ class User(AbstractUser):
 
     def __str__(self):
         return f'{self.email}'
+
+    def save(self, *args, **kwargs):
+        if not self.uid:
+            self.uid = uuid.uuid4()
+
+        super().save(*args, **kwargs)
 
     class Meta:
         verbose_name = 'Пользователь'

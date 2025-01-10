@@ -31,7 +31,6 @@ class Ad(models.Model):
     updated_at = models.DateTimeField(
         verbose_name='Дата и время обновления объявления',
         **NULLABLE,
-        auto_now=True,
         editable=False
     )
     image = models.ImageField(
@@ -76,7 +75,6 @@ class Review(models.Model):
     updated_at = models.DateTimeField(
         verbose_name='Дата и время обновления отзыва',
         **NULLABLE,
-        auto_now=True,
         editable=False
     )
 
