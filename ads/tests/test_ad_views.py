@@ -1,5 +1,5 @@
 from decimal import Decimal
-
+from django.core import mail
 import pytest
 from django.urls import reverse
 from rest_framework import status
@@ -124,21 +124,24 @@ def test_ad_list_pagination(api_client, ad, user):
     assert len(response_data['results']) == 2
 
 
-# @pytest.mark.django_db
-# def test_user_specific_ads_list(auth_user, ad, user):
-#     """Тест на просмотр списка объявлений, принадлежащих пользователю."""
-#     # Проверяем, что пользователь является автором объявления
-#     assert ad.author == user
-#
-#     url = reverse('ads:my-list')
-#     response = auth_user.get(url)
-#
-#     assert response.status_code == status.HTTP_200_OK
-#
-#     assert len(response.data['results']) == 1
-#     assert response['results'][0]['title'] == ad.title
-#     # Проверка, что другие объявления пользователя другого авторов не появляются
-#     assert another_ad.title != response['results'][0]['title']
+@pytest.mark.django_db
+def test_user_specific_ads_list(auth_user, ad, user, ad_2):
+    """Тест на просмотр списка объявлений, принадлежащих пользователю."""
+    # Проверяем, что пользователь является автором объявления
+    assert ad.author == user
+
+    url = reverse('ads:my-list')
+    response = auth_user.get(url)
+    print(response.data)
+
+    assert response.status_code == status.HTTP_200_OK
+
+    assert len(response.data['results']) == 1
+    assert response.data['results'][0]['title'] == ad.title
+    # Проверка, что другие объявления пользователя другого авторов не появляются
+    for item in response.data['results']:
+        assert item['title'] != ad_2.title
+
 
 @pytest.mark.django_db
 def test_ad_retrieve_owner(auth_user, ad):
@@ -269,3 +272,37 @@ def test_ad_destroy_by_admin(auth_admin, ad):
     assert response.status_code == status.HTTP_204_NO_CONTENT
     assert not Ad.objects.filter(id=ad.id).exists()
     assert Ad.objects.count() == 0
+
+
+@pytest.mark.django_db
+def send_email_test_setup(mailoutbox, auth_user, user):
+    """Тест на отправку email для сброса пароля, а также на корректность
+    данных отправленных в сообщении."""
+
+    url = reverse('users:reset-password')
+    data = {'email': user.email}
+    response = auth_user.post(url, data)
+    print(response.data)
+
+    assert response.status_code == status.HTTP_403_FORBIDDEN
+
+    subject = 'Сброс пароля'
+    body = ('Перейдите по ссылке для сброса пароля:'
+            '{reset_link}. Если Вы не запрашивали сброс пароля '
+            'проигнорируйте данное сообщение.')
+    reset_link = 'http://127.0.0.1:8000/users/reset-password/{uid}/{token}/'
+    body.format(reset_link.format(uid=user.uid, token='dummy_token'))
+
+    mail.send_mail(
+        subject=subject,
+        message=body,
+        from_email='testuser@example.com',
+        recipient_list=[user.email]
+    )
+
+    assert len(mailoutbox) == 1  # Проверка, что письмо отправлено
+    email = mailoutbox[0]
+    assert email.subject == subject
+    assert email.body == body
+    # Проверка, что email пользователя в списке получателей
+    assert user.email in email.to

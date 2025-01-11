@@ -11,17 +11,12 @@ app_name = AdsConfig.name
 
 urlpatterns = [
     # Ads
-    path('create/', AdCreateAPIView.as_view(),
-         name='ad-create'),
-    path('list/', AdListAPIView.as_view(),
-         name='ad-list'),
+    path('create/', AdCreateAPIView.as_view(), name='ad-create'),
+    path('list/', AdListAPIView.as_view(), name='ad-list'),
     path('my-list/', AdUserListAPIView.as_view(), name='my-list'),
-    path('detail/<int:pk>/', AdRetrieveAPIView.as_view(),
-         name='ad-detail'),
-    path('update/<int:pk>/', AdUpdateAPIView.as_view(),
-         name='ad-update'),
-    path('delete/<int:pk>/', AdDestroyAPIView.as_view(),
-         name='ad-delete'),
+    path('detail/<int:pk>/', AdRetrieveAPIView.as_view(), name='ad-detail'),
+    path('update/<int:pk>/', AdUpdateAPIView.as_view(), name='ad-update'),
+    path('delete/<int:pk>/', AdDestroyAPIView.as_view(), name='ad-delete'),
 
     # Review
     path('<int:ad_id>/review-create/', ReviewCreateAPIView.as_view(),
