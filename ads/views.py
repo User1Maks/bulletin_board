@@ -35,7 +35,7 @@ class AdListAPIView(generics.ListAPIView):
 
 class AdUserListAPIView(generics.ListAPIView):
     """Endpoint для вывода списка всех объявлений принадлежащих пользователю."""
-    queryset = Ad.objects.all()
+    queryset = Ad.objects.all().order_by('-created_at')
     serializer_class = AdSerializers
     filter_backends = [DjangoFilterBackend, OrderingFilter, SearchFilter]
     filterset_fields = ('price',)

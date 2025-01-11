@@ -1,6 +1,5 @@
 import pytest
 from rest_framework.test import APIClient
-
 from ads.models import Ad, Review
 from users.models import User
 
@@ -64,6 +63,18 @@ def ad(user):
         author=user
     )
     return ad
+
+
+@pytest.fixture
+def ad_2(user_2):
+    """Фикстура для тестового объявления."""
+    ad_2 = Ad.objects.create(
+        title='Название 2',
+        price=20_000,
+        description='Описание товара 2.',
+        author=user_2
+    )
+    return ad_2
 
 
 @pytest.fixture
