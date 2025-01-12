@@ -46,7 +46,8 @@ class AdUserListAPIView(generics.ListAPIView):
 
     def get_queryset(self):
         """Возвращает пользователю, только его объявления."""
-        return Ad.objects.filter(author=self.request.user)
+        return Ad.objects.filter(author=self.request.user).order_by(
+            '-created_at')
 
 
 class AdRetrieveAPIView(generics.RetrieveAPIView):

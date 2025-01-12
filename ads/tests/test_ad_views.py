@@ -3,7 +3,6 @@ from django.core import mail
 import pytest
 from django.urls import reverse
 from rest_framework import status
-
 from ads.models import Ad
 
 
@@ -275,23 +274,23 @@ def test_ad_destroy_by_admin(auth_admin, ad):
 
 
 @pytest.mark.django_db
-def send_email_test_setup(mailoutbox, auth_user, user):
+def test_send_email_test_setup(user, auth_user, mailoutbox):
     """Тест на отправку email для сброса пароля, а также на корректность
     данных отправленных в сообщении."""
 
     url = reverse('users:reset-password')
     data = {'email': user.email}
     response = auth_user.post(url, data)
-    print(response.data)
 
-    assert response.status_code == status.HTTP_403_FORBIDDEN
+    assert response.status_code == status.HTTP_200_OK
 
     subject = 'Сброс пароля'
+
+    reset_link = 'http://127.0.0.1:8000/users/reset-password/{uid}/{token}/'
     body = ('Перейдите по ссылке для сброса пароля:'
             '{reset_link}. Если Вы не запрашивали сброс пароля '
             'проигнорируйте данное сообщение.')
-    reset_link = 'http://127.0.0.1:8000/users/reset-password/{uid}/{token}/'
-    body.format(reset_link.format(uid=user.uid, token='dummy_token'))
+    body.format(reset_link=reset_link.format(uid=user.uid, token='dummy_token'))
 
     mail.send_mail(
         subject=subject,
