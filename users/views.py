@@ -13,6 +13,7 @@ from users.serializers import (PasswordResetConfirmSerializer,
                                ResetPasswordEmailRequestSerializer,
                                UserDetailSerializer, UserSerializer)
 from users.tasks import send_reset_password_email
+from django.utils.http import urlsafe_base64_encode
 
 
 class UserCreateAPIView(CreateAPIView):
@@ -78,7 +79,7 @@ class PasswordResetView(GenericAPIView):
                 status=status.HTTP_404_NOT_FOUND)
 
         user = User.objects.get(email=email)
-        uid = user.uid
+        uid = urlsafe_base64_encode(str(user.uid).encode())
 
         token = PasswordResetTokenGenerator().make_token(user)
         host = self.request.get_host()
@@ -115,11 +116,14 @@ class PasswordResetConfirm(GenericAPIView):
         serializer.is_valid(raise_exception=True)
 
         uid = serializer.validated_data['uid']
+
         token = serializer.validated_data['token']
+
         new_password = serializer.validated_data['new_password']
 
-        user_id = smart_str(urlsafe_base64_decode(uid))
-        user = User.objects.get(id=user_id)
+        decoded_uid = smart_str(urlsafe_base64_decode(uid))
+
+        user = User.objects.get(uid=decoded_uid)
 
         if not PasswordResetTokenGenerator().check_token(user, token):
             return Response({
