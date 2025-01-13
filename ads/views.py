@@ -6,7 +6,7 @@ from rest_framework.permissions import AllowAny
 
 from ads.models import Ad, Review
 from ads.paginators import AdPaginator, ReviewPaginator
-from ads.permissions import IsAuthorAd, IsAuthorReview
+from ads.permissions import IsAuthor
 from ads.serializers import AdSerializers, ReviewSerializers
 from users.permissions import IsAdminUser
 
@@ -42,7 +42,7 @@ class AdUserListAPIView(generics.ListAPIView):
     ordering_fields = ('-created_at',)
     search_fields = ('title',)
     pagination_class = AdPaginator
-    permission_classes = [IsAuthorAd | IsAdminUser]
+    permission_classes = [IsAuthor | IsAdminUser]
 
     def get_queryset(self):
         """Возвращает пользователю, только его объявления."""
@@ -60,7 +60,7 @@ class AdUpdateAPIView(generics.UpdateAPIView):
     """Endpoint для обновления объявления."""
     queryset = Ad.objects.all()
     serializer_class = AdSerializers
-    permission_classes = [IsAuthorAd | IsAdminUser]
+    permission_classes = [IsAuthor | IsAdminUser]
 
     def perform_update(self, serializer):
         """При изменении объекта добавляет поле updated_at."""
@@ -72,7 +72,7 @@ class AdUpdateAPIView(generics.UpdateAPIView):
 class AdDestroyAPIView(generics.DestroyAPIView):
     """Endpoint для удаления объявления."""
     queryset = Ad.objects.all()
-    permission_classes = [IsAuthorAd | IsAdminUser]
+    permission_classes = [IsAuthor | IsAdminUser]
 
 
 # Endpoints отзыва
@@ -104,7 +104,7 @@ class ReviewUpdateAPIView(generics.UpdateAPIView):
     """Endpoint для обновления отзыва."""
     queryset = Review.objects.all()
     serializer_class = ReviewSerializers
-    permission_classes = [IsAuthorReview | IsAdminUser]
+    permission_classes = [IsAuthor | IsAdminUser]
 
     def perform_update(self, serializer):
         """При изменении объекта отзыва, добавляется поле updated_at."""
@@ -116,4 +116,4 @@ class ReviewUpdateAPIView(generics.UpdateAPIView):
 class ReviewDestroyAPIView(generics.DestroyAPIView):
     """Endpoint для удаления отзыва."""
     queryset = Review.objects.all()
-    permission_classes = [IsAuthorReview | IsAdminUser]
+    permission_classes = [IsAuthor | IsAdminUser]
